@@ -1,6 +1,8 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from logistic.models import Product, Stock
@@ -14,6 +16,10 @@ class ProductViewSet(ModelViewSet):
     search_fields = ['title', 'description']
     filterset_fields = ['title', 'description']
     pagination_class = LimitOffsetPagination
+
+    @action(['GET'], detail=False)
+    def test(self, request):
+        return Response('Hi')
 
 
 class StockViewSet(ModelViewSet):
