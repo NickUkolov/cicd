@@ -66,8 +66,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script:
-            - expect /home/nick/cicd/run_pull.exp
-
-
-
+          script: expect /home/nick/cicd/run_pull.exp
