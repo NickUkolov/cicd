@@ -1,0 +1,7 @@
+#!/bin/bash/expect -f
+spawn /home/nick/cicd/run_pull.sh
+expect "passphrase"
+send -- "nick\r\n"
+expect "*?assword*"
+send -- "nick\r\n"
+expect eof
