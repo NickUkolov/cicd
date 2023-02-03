@@ -2,7 +2,7 @@ name: test and deploy
 
 on:
   push:
-    branches: [cicd]
+    branches: [main]
 
 jobs:
   tests:
